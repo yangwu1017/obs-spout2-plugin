@@ -1,71 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>win_spout_output_settings</class>
- <widget class="QDialog" name="win_spout_output_settings">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>320</width>
-    <height>160</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Spout输出设置</string>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_spoutname">
-       <property name="text">
-        <string>Spout名称：</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit_spoutname">
-       <property name="placeholderText">
-        <string>自定义Spout共享名称</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox_auto">
-       <property name="text">
-        <string>自动生成名称</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0" colspan="2">
-      <widget class="QCheckBox" name="checkBox_continuous">
-       <property name="text">
-        <string>持续发送（不等待新帧）</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="layout_startstop">
-     <item>
-      <widget class="QPushButton" name="pushButton_start">
-       <property name="text">
-        <string>开始</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_stop">
-       <property name="text">
-        <string>停止</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-  </layout>
- </widget>
- <resources/>
- <connections/>
+	<class>win_spout_output_settings</class>
+	<widget class="QDialog" name="win_spout_output_settings">
+		<property name="windowModality">
+			<enum>Qt::WindowModal</enum>
+		</property>
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>455</width>
+				<height>227</height>
+			</rect>
+		</property>
+		<property name="windowTitle">
+			<string>Spout输出设置</string>
+		</property>
+		<widget class="QPushButton" name="pushButton_start">
+			<property name="geometry">
+				<rect>
+					<x>230</x>
+					<y>180</y>
+					<width>89</width>
+					<height>25</height>
+				</rect>
+			</property>
+			<property name="text">
+				<string>开始</string>
+			</property>
+		</widget>
+		<widget class="QPushButton" name="pushButton_stop">
+			<property name="geometry">
+				<rect>
+					<x>330</x>
+					<y>180</y>
+					<width>89</width>
+					<height>25</height>
+				</rect>
+			</property>
+			<property name="text">
+				<string>停止</string>
+			</property>
+		</widget>
+		<widget class="QWidget" name="">
+			<property name="geometry">
+				<rect>
+					<x>42</x>
+					<y>43</y>
+					<width>381</width>
+					<height>114</height>
+				</rect>
+			</property>
+			<layout class="QVBoxLayout" name="verticalLayout_3">
+				<item>
+					<widget class="QCheckBox" name="checkBox_auto">
+						<property name="text">
+							<string>OBS启动自动发送</string>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<widget class="QCheckBox" name="checkBox_continuous">
+						<property name="toolTip">
+							<string>启用后，Spout输出会持续广播，即使源不在当前场景。
+程序启动后立刻注册发送端，接收软件可以直接识别。
+代价是隐藏源会占用额外GPU资源。
+关闭时，只有源正在渲染时才发送画面。</string>
+						</property>
+						<property name="text">
+							<string>持续发送（不等待新帧）</string>
+						</property>
+					</widget>
+				</item>
+				<item>
+					<layout class="QHBoxLayout" name="horizontalLayout">
+						<item>
+							<layout class="QVBoxLayout" name="verticalLayout_2">
+								<item>
+									<widget class="QLabel" name="label_spoutname">
+										<property name="text">
+											<string>Spout输出名称</string>
+										</property>
+									</widget>
+								</item>
+							</layout>
+						</item>
+						<item>
+							<layout class="QVBoxLayout" name="verticalLayout">
+								<item>
+									<widget class="QLineEdit" name="lineEdit_spoutname">
+										<property name="placeholderText">
+											<string>OBS_Spout</string>
+										</property>
+									</widget>
+								</item>
+							</layout>
+						</item>
+					</layout>
+				</item>
+			</layout>
+		</widget>
+	</widget>
+	<layoutdefault spacing="6" margin="11" />
+	<resources />
+	<connections />
 </ui>
