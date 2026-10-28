@@ -14,7 +14,7 @@
 			</rect>
 		</property>
 		<property name="windowTitle">
-			<string>Win Spout Output Settings</string>
+			<string>Spout输出设置</string>
 		</property>
 		<widget class="QPushButton" name="pushButton_start">
 			<property name="geometry">
@@ -26,7 +26,7 @@
 				</rect>
 			</property>
 			<property name="text">
-				<string>Start</string>
+				<string>开始</string>
 			</property>
 		</widget>
 		<widget class="QPushButton" name="pushButton_stop">
@@ -39,7 +39,7 @@
 				</rect>
 			</property>
 			<property name="text">
-				<string>Stop</string>
+				<string>停止</string>
 			</property>
 		</widget>
 		<widget class="QWidget" name="">
@@ -55,20 +55,20 @@
 				<item>
 					<widget class="QCheckBox" name="checkBox_auto">
 						<property name="text">
-							<string>AutoStart</string>
+							<string>OBS启动自动发送</string>
 						</property>
 					</widget>
 				</item>
 				<item>
 					<widget class="QCheckBox" name="checkBox_continuous">
 						<property name="toolTip">
-							<string>When enabled, Spout output filters broadcast continuously, even when their source is not in the active scene.
-This registers the sender right after a cold start, so receivers see it without opening the filter.
-The cost is some extra GPU for hidden sources.
-When disabled, the previous behaviour is kept: a filter only sends while its source is being rendered.</string>
+							<string>启用后，Spout输出会持续广播，即使源不在当前场景。
+程序启动后立刻注册发送端，接收软件可以直接识别。
+代价是隐藏源会占用额外GPU资源。
+关闭时，只有源正在渲染时才发送画面。</string>
 						</property>
 						<property name="text">
-							<string>Continuous filter broadcast</string>
+							<string>持续发送（不等待新帧）</string>
 						</property>
 					</widget>
 				</item>
@@ -79,7 +79,7 @@ When disabled, the previous behaviour is kept: a filter only sends while its sou
 								<item>
 									<widget class="QLabel" name="label_spoutname">
 										<property name="text">
-											<string>Spout Output Name</string>
+											<string>Spout输出名称</string>
 										</property>
 									</widget>
 								</item>
