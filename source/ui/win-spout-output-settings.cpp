@@ -10,6 +10,7 @@
 #include "win-spout-output-settings.h"
 #include "ui_win-spout-output-settings.h"
 #include <obs-frontend-api.h>
+#include <obs-module.h>
 #include <util/config-file.h>
 #include "../win-spout-config.h"
 #include "../win-spout.h"
@@ -22,6 +23,16 @@ win_spout_output_settings::win_spout_output_settings(QWidget *parent)
 {
 	this->setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
+
+	/* Localise dialog strings that were hardcoded in the .ui file */
+	setWindowTitle(obs_module_text("outputsettings.title"));
+	ui->checkBox_auto->setText(obs_module_text("outputsettings.autostart"));
+	ui->checkBox_continuous->setText(obs_module_text("outputsettings.continuous"));
+	ui->checkBox_continuous->setToolTip(obs_module_text("outputsettings.continuoustip"));
+	ui->label_spoutname->setText(obs_module_text("outputsettings.spoutname"));
+	ui->pushButton_start->setText(obs_module_text("outputsettings.start"));
+	ui->pushButton_stop->setText(obs_module_text("outputsettings.stop"));
+
 	connect(ui->pushButton_start, SIGNAL(clicked(bool)), this, SLOT(on_start()));
 	connect(ui->pushButton_stop, SIGNAL(clicked(bool)), this, SLOT(on_stop()));
 
